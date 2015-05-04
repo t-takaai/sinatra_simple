@@ -7,8 +7,22 @@
 </head>
 <body>
   <div class="container">
-    <h1>Sample</h1>
-  </div>
-  <script src="/js/main.js"></script>
+			<h1>Sample</h1>
+			<form method="post" action="/" enctype="multipart/form-data">
+					<textarea rows="10" cols="30" name="ex_text" id="ex-text"></textarea>
+					<input type="file" name="file">
+					<input type="submit" name="submit" value="submit">
+			</form>
+			<% posts.each do |post| %>
+					<div class="post">
+							<div class="post-text">
+									<%= escape_html post["text"] %>
+							</div>
+							<dvi class="post-image">
+									<img src="/uploads/<%= post["img_file_name"] %>" alt="<% post["img_file_name"] %>" class="ex-image">
+							</dvi>
+					</div>
+			<% end  %>
+			<script src="/js/main.js"></script>
 </body>
 </html>

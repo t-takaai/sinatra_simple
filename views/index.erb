@@ -27,6 +27,10 @@
 									<%= escape_html post["text"] %>
 							</div>
 							<dvi class="post-image">
+									<div class="tools">
+											<a href="/star?post_id=<%= post["id"] %>">スターを増やす</a><br>
+											<span class="add-star"><%= post["star_count"] %></span>
+									</div>
 									<img src="/uploads/<%= post["img_file_name"] %>" alt="<% post["img_file_name"] %>" class="ex-image">
 							</dvi>
 					</div>
